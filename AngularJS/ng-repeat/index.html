@@ -14,14 +14,24 @@
 
 <body ng-controller="MainController">
     <div>
-        Country Name: {{country.name}}
+        <table>
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div>
-        Capital: {{country.capital}}
-    </div>
-    <div>
-        <img ng-src="{{country.flag}}" alt="{{country.name}} + 'Flag' " style="height:100px; width:200px" />
-    </div>
+
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
     <script src="app.js"></script>
