@@ -10,47 +10,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AngularJS App</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body ng-controller="MainController">
     <div>
         <table>
             <thead>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
-                <th>Salary</th>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees">
-                    <td>{{employee.firstName}}</td>
-                    <td>{{employee.lastName}}</td>
-                    <td>{{employee.gender}}</td>
-                    <td>{{employee.salary}}</td>
+                <tr ng-repeat="technology in technologies">
+                    <td>{{ technology.name }}</td>
+                    <td>{{ technology.likes }}</td>
+                    <td>{{ technology.dislikes }}</td>
+                    <td>
+                        <input type="button" value="Like" ng-click="incrementLikes(technology)">
+                        <input type="button" value="Dislike" ng-click="incrementDislikes(technology)">
+                    </td>
+
                 </tr>
             </tbody>
         </table>
-    </div>
-
-    <div>
-        ............................................................<br/> ............................................................<br/> 
-        <em>Nested ng-repeat down here</em>
-    </div>
-
-    <div>
-
-        <ul>
-            <li ng-repeat="country in countries">
-                {{country.name}}
-                <ul>
-                    <li ng-repeat="city in country.cities">
-                        {{city.name}}
-
-                    </li>
-                </ul>
-
-            </li>
-        </ul>
     </div>
 
     <script src="lib/angular/angular.js"></script>
