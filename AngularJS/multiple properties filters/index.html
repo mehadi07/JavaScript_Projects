@@ -15,10 +15,12 @@
 
 <body ng-controller="MainController">
     <div>
-        Search: <input type="text" placeholder="Search Employee" ng-model="searchText" />
+        <input type="text" placeholder="Search Name" ng-model="searchText.name" />
+        <input type="text" placeholder="Search by City" ng-model="searchText.city" />
         <!-- 
 to search individual like city you have to type searchText.city or other expressions.
 -->
+        <input type="checkbox" ng-model="exactMatch" /> Exact Match
         <br/>
         <br/>
         <table>
@@ -31,7 +33,7 @@ to search individual like city you have to type searchText.city or other express
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | filter:searchText">
+                <tr ng-repeat="employee in employees | filter:searchText : exactMatch">
                     <td> {{ employee.name }} </td>
                     <td> {{ employee.gender }} </td>
                     <td> {{ employee.salary }} </td>
