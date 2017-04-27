@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="loginApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body ng-controller="MainController">
+    <div>
+        Order By: <br/> 
+        <select ng-model="sortColumn">
+        <option value="+name">Name ASC</option>
+        <option value="-gender">Gender DESC</option>
+        <option value="+dateOfBirth">DOB ASC</option>
+        <option value="-salary">Salary DESC</option>
+
+        </select><br/><br/>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn">
+                    <td>
+                        {{ employee.name }}
+                    </td>
+                    <td>
+                        {{ employee.dateOfBirth | date:"dd/MM/yyyy" }}
+                    </td>
+                    <td>
+                        {{ employee.gender }}
+                    </td>
+                    <td>
+                        {{ employee.salary }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/MainController.js"></script>
+
+</body>
+
+</html>

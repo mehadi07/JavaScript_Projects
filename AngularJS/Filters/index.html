@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="loginApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body ng-controller="MainController">
+    <div>
+        Rows to Display:: <input type="number" step="1" min="0" max="5" ng-model="rowCount" /> <br/> <br/>
+
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Salary (Number)</th>
+                <th>Salary(Currency)</th>
+            </thead>
+            <tbody>
+                <!--
+used limitTo filter with directives and i can hard code it or connect it with ng-model and add other filter too 
+-->
+                <tr ng-repeat="employee in employees | limitTo : rowCount">
+                    <td>{{employee.name | uppercase}} </td>
+                    <td>{{employee.dateOfBirth | date:"MM/dd/yyyy"}} </td>
+                    <td>{{employee.gender | lowercase}} </td>
+                    <!--
+used number filter with 2 decimal 
+-->
+                    <td>{{employee.salary | number: 2}} </td>
+                    <!--
+used curency filter with $ and  0 after decimal  
+-->
+                    <td>{{employee.salary | currency: "$" : 0}} </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/MainController.js"></script>
+
+</body>
+
+</html>
