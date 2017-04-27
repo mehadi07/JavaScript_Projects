@@ -15,27 +15,19 @@
 
 <body ng-controller="MainController">
     <div>
-        Search: <input type="text" placeholder="Search Employee" ng-model="searchText" />
-        <!-- 
-to search individual like city you have to type searchText.city or other expressions.
--->
-        <br/>
-        <br/>
-        <table>
+         <table>
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Gender</th>
                     <th>Salary</th>
-                    <th>City</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | filter:searchText">
+                <tr ng-repeat="employee in employees">
                     <td> {{ employee.name }} </td>
-                    <td> {{ employee.gender }} </td>
-                    <td> {{ employee.salary }} </td>
-                    <td> {{ employee.city }} </td>
+                    <td> {{ employee.gender | genderFilter}} </td>
+                    <td> {{ employee.salary  }} </td>
                 </tr>
             </tbody>
         </table>
@@ -45,6 +37,7 @@ to search individual like city you have to type searchText.city or other express
     <script src="lib/angular/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="controllers/MainController.js"></script>
+    <script src="directives/genderFilter.js"></script>
 
 </body>
 
