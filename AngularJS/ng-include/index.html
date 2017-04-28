@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="loginApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body ng-controller="MainController">
+    <div ng-include="'employeeTable.html'"></div>
+
+    <br/> Select View:
+    <select ng-model="employeeView">
+        <option value="employeeTable.html"> Table </option>
+        <option value="employeeList.html"> List </option>
+
+    </select>
+    <br/>
+    <br/>
+    <div ng-include="employeeView"></div>
+    <!--Created a scope on controller and shortend the .html format to a normal name
+        -->
+
+
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/MainController.js"></script>
+
+</body>
+
+</html>

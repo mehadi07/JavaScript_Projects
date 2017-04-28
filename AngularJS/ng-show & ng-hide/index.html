@@ -15,10 +15,9 @@
 
 <body ng-controller="MainController">
     <div>
-        Search: <input type="text" placeholder="Search Employee" ng-model="searchText" />
-        <!-- 
-to search individual like city you have to type searchText.city or other expressions.
--->
+        <input type="checkbox" ng-model="hideSalary" /> Hide Salary
+
+        <input type="checkbox" ng-model="hideCity" /> Hide City
         <br/>
         <br/>
         <table>
@@ -26,16 +25,20 @@ to search individual like city you have to type searchText.city or other express
                 <tr>
                     <th>Name</th>
                     <th>Gender</th>
-                    <th>Salary</th>
-                    <th>City</th>
+                    <th ng-hide="hideCity">City</th>
+                    <th ng-show="hideCity">City</th>
+
+                    <th ng-hide="hideSalary">Salary</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | filter:searchText">
+                <tr ng-repeat="employee in employees">
                     <td> {{ employee.name }} </td>
-                    <td> {{ employee.gender }} </td>
-                    <td> {{ employee.salary }} </td>
-                    <td> {{ employee.city }} </td>
+                    <td> {{ employee.gender}} </td>
+                    <td ng-hide="hideCity"> {{ employee.city}} </td>
+                    <th ng-show="hideCity">####</th>
+
+                    <td ng-show="!hideSalary"> {{ employee.salary }} </td>
                 </tr>
             </tbody>
         </table>

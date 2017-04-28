@@ -34,4 +34,6 @@ app.controller('MainController', function MainController($scope) {
             ];
 
     $scope.employees = employees;
+    $scope.employeeView= "employeeTable.html";
+    $scope.employeeList="employeeList.html";
 });
