@@ -1,0 +1,25 @@
+{
+  "name": "ng-include",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "consolidate": "^0.14.5",
+    "express": "^4.15.2",
+    "html": "^1.0.0",
+    "swig": "^1.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mehadi",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/mehadi07/JavaScript_Projects/AngularJS/ng-include)"
+  },
+  "devDependencies": {
+    "broccoli-sass": "^0.7.0"
+  }
+}
