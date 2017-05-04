@@ -14,10 +14,13 @@
     <script>
         var today = new Date();
         var dd = today.getDay();
-        var mm = today.getMonth()+1;
-        var yyyy = today.getYear();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
 
         document.write("Format(mm/dd/yyyy) :" + mm + "/" + dd + "/" + yyyy);
+
+        //        today = mm + '/' + dd + '/' + yyyy;
+        //        document.write(today);
 
     </script>
     <br/>
