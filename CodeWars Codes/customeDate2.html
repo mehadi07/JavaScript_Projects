@@ -1,3 +1,9 @@
+<!--
+Write a JavaScript program to get the current date. 
+Expected Output :
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -17,6 +23,9 @@
         var mm = today.getMonth() + 1;
         var yyyy = today.getFullYear();
 
+        // if day or month is less than 10 add 0;
+        (dd < 10) ? dd = "0" + dd: dd;
+        (mm < 10) ? mm = "0" + mm: mm;
         document.write("Format(mm/dd/yyyy) :" + mm + "/" + dd + "/" + yyyy);
 
         //        today = mm + '/' + dd + '/' + yyyy;

@@ -1,0 +1,28 @@
+<!--Write a JavaScript function to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>The area of a traingle</title>
+</head>
+
+<body>
+    <div>The area of a traingle</div>
+    <script>
+        var side1 = 5;
+        var side2 = 6;
+        var side3 = 7;
+        var sideAverage = (side1 + side2 + side3) / 2;
+
+        var area = Math.sqrt(sideAverage * (sideAverage - side1) * (sideAverage - side2) * (sideAverage - side3));
+
+        document.write(" Total Area this Traingle is : " + area);
+
+
+        //        The Math.sqrt() function is used to get the square root of a number. If the value of the number is negative, Math.sqrt() returns NaN.
+
+    </script>
+</body>
+
+</html>
