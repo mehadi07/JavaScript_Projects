@@ -1,0 +1,26 @@
+<!--Write a JavaScript program to find which 1st January is being a Tuesday between 2010 and 2050.-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>A Program to find 1st January is being a Tuesday between 2010 and 2050.</title>
+</head>
+
+<body>
+    <script>
+        
+        for (var year = 2010; year <= 2050; year++) {
+            var day = new Date(year, 0, 1);
+            if (day.getDay() === 2) {
+                document.write("1st January is being a Tuesday " + year);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!--The getDay() method is used to get the day of the week for the specified date according to local time, where 0 represents Sunday. The value returned by getDay() is an integer corresponding to the day of the week: 0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.-->

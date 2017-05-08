@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Find Leap Year</title>
+</head>
+
+<body>
+    <div>Find Leap Year</div>
+    <script>
+        //        year = window.prompt("Input a Year : ");
+        //        x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+        var year = window.prompt("Type the year you wanna check: ");
+
+        if (year % 4 === 0 && year % 400 === 0) {
+
+            document.write(year + " is not a leap year. Sorry bruh.");
+
+        } else if (year % 100 === 0) {
+
+            document.write(year + " is a leap year, awsum!");
+
+        } else {
+
+            document.write(year + " it is indeed a leap year woop!");
+
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!--Every year that is exactly divisible by four is a leap year, except for years that are exactly divisible by 100, but these centurial years are leap years if they are exactly divisible by 400. For example, the years 1700, 1800, and 1900 are not leap years, but the year 2000 is.-->
