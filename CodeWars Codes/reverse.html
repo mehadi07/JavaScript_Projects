@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <div>Reverse Number</div><br/><br/> Give me a Number: <input type="text" id="in" />
+
+    <input type="button" onClick="reverse()" value="reverse" />
+    <script>
+        function reverse() {
+            var inputNumber = document.getElementById("in").value;
+
+            var reverseNumber = inputNumber.split('').reverse().join();
+            
+            document.write(reverseNumber);
+
+            //            var numberSplit = inputNumber.split("");
+            //
+            //            var reverseNumber = numberSplit.reverse();
+            //
+            //            var joinNumber = reverseNumber.join();
+
+            //            document.write(joinNumber);
+        }
+
+    </script>
+
+</body>
+
+</html>
