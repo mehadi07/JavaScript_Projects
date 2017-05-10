@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="loginApp">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS App</title>
+    <link rel="stylesheet" href="/views/main.css">
+</head>
+
+<body>
+    <div ng-controller="redColourController">
+        Root Scope Colour : {{rootScopeColour}} <br /> Red Colour Controller : {{redColour}} <br /> Green Colour Controller :
+        <span style="color:red" ng-show="greenColour == undefined">
+        greenColour is undefined
+    </span>
+    </div>
+
+    <br />
+
+    <div ng-controller="greenColourController">
+        Root Scope Colour : {{rootScopeColour}} <br />
+        Green Colour Controller : {{greenColour}} <br />
+        Red Colour Controller :{{redColour}}
+        <span style="color:red" ng-show="redColour == undefined">
+        redColour is undefined
+    </span>
+    </div>
+
+
+    <script src="/views/lib/angular/angular.js"></script>
+    <script src="/views/app.js"></script>
+    <script src="/views/MainController.js">
+
+
+    </script>
+    <script src="views/stringService.js"></script>
+
+</body>
+
+</html>
