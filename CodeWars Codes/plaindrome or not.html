@@ -7,30 +7,56 @@
 </head>
 
 <body>
-    <div>Plaindrome or Not</div><br/><br/> Give me a String: <input type="text" id="input" />
+    <div>Plaindrome or Not</div><br/><br/> 
+    Give me a String: <input type="text" id="input" />
 
     <input type="button" onClick="check()" value="check" />
     <script>
         function check() {
+            // Change the string into lower case and remove  all non-alphanumeric characters
             var inputString = document.getElementById("input").value.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '');
 
             var ccount = 0;
 
+            // Check whether the string is empty or not
+
             if (inputString === "") {
                 document.write('Nothing Found !!');
                 return false;
-            }
+            };
+
+            // Check if the length of the string is even or odd 
+
             if ((inputString.length) % 2 === 0) {
                 ccount = (inputString.length) / 2;
             } else {
+
+                // If the length of the string is 1 then it becomes a palindrome
+
                 if (inputString.length === 1) {
                     document.write("Entry is Plaindrome !!");
                     return true
                 } else {
-                    ccount = (inputString.length - 1) / 2 ;
+
+                    // If the length of the string is odd ignore middle character
+
+                    ccount = (inputString.length - 1) / 2;
+                }
+            };
+
+            // Loop through to check the first character to the last character and then move next
+
+            for (var x = 0; x < ccount; x++) {
+
+                // Compare characters and drop them if they do not match
+
+                if (inputString[x] != inputString.slice(-1 - x)[0]) {
+                    document.write("Entry is not a palindrome.");
+                    return false;
                 }
             }
-
+            document.write("The entry is a palindrome.");
+            return true;
 
         }
 
