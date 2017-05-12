@@ -1,0 +1,42 @@
+<!--
+Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
+
+Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <div>Check a number is prime or not</div><br/><br/> Give me a number : <input type="number" id="input" />
+
+    <input type="button" onClick="sortIt()" value="check" />
+
+    <script>
+        function sortIt() {
+            var value = document.getElementById("input").value;
+
+            if (value === 1) {
+                return false;
+            } else if (value === 2) {
+                return true;
+            } else {
+                for (var x = 2; x < value; x++) {
+                    if (value % x === 0) {
+                        return (alert("Try Again"));
+                    }
+                }
+                document.write("This is a prime Number : " + value);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

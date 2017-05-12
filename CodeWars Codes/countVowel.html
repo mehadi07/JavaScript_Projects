@@ -1,0 +1,47 @@
+<!--
+Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+
+Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here.
+
+Sample Data and output:
+Example string: 'The quick brown fox'
+Expected Output: 5
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <div>Find the Vowels within a string</div><br/><br/> Give me a Sentance : <input type="text" id="input" />
+
+    <input type="button" onClick="sortIt()" value="check" />
+
+    <script>
+        function sortIt() {
+            var value = document.getElementById("input").value;
+            
+            var vowels = 'aeiouAEIOU';
+            var vcount = 0;
+
+            for (var i = 0; i < value.length; i++) {
+                if (vowels.indexOf(value[i]) !== -1) {
+                    vcount += 1;
+                }
+            }
+            document.write(vcount);
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+<!--
+trim() removes all the whitespace. and toString converst int to string.
+-->
