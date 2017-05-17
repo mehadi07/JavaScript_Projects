@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {enableProdMode} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { enableProdMode } from '@angular/core';
 
 enableProdMode();
 // enabled it by importing and executing the function (before calling bootstrap)
@@ -13,7 +15,7 @@ import { ProductListComponent } from './products/product-list.component';
 
 
 @NgModule({
-  imports: [ BrowserModule ],
+  imports: [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, ProductListComponent ],
   bootstrap: [ AppComponent ]
 })
