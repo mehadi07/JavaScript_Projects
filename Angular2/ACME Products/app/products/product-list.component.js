@@ -10,7 +10,7 @@ var core_1 = require("@angular/core");
 var ProductListComponent = (function () {
     function ProductListComponent() {
         this.pageTitle = 'Product List';
-        this.imageWidth = 80;
+        this.imageWidth = 60;
         this.imageMargin = 2;
         this.showImage = false;
         this.listFilter = 'Cart';
@@ -50,12 +50,18 @@ var ProductListComponent = (function () {
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
+    ProductListComponent.prototype.ngOnInit = function () {
+        console.log('In OnInit');
+    };
     return ProductListComponent;
 }());
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-products',
-        templateUrl: 'app/products/product-list.component.html'
+        moduleId: module.id,
+        // used moduleId to remove absolute path from the url  app/products/product-list.component.html
+        templateUrl: 'product-list.component.html',
+        styleUrls: ['product-list.component.css']
     })
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
